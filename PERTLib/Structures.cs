@@ -1,105 +1,106 @@
-﻿namespace PERTLib.Structures;
+﻿using Microsoft.VisualBasic;
 
-public interface IProblem
+namespace PERTLib.Structures
 {
-    int ProblemId { get; }
-    string Title { get; }
-
-    string Description { get; }
-
-    string[] Concepts { get; }
-
-    string[] Hints { get; }
-
-
-}
-
-public abstract class Problem : IProblem
-{
-    private int _pid;
-    private string _title;
-    private string _description;
-    private string[] _concepts;
-    private string[] _hints;
-    public Problem(int pid, string title, string description, string[] concepts, string[] hints)
+    public interface IProblem
     {
-        _pid = pid;
-        _title = title;
-        _description = description;
-        _concepts = concepts;
-        _hints = hints;
+        Int32 ProblemID { get; }
+        string ProblemName { get; }
+
+        string ProblemType { get; }
+
+    }
+    public enum ProblemType : Int32
+    {
+        Unknown = 0,
+        Programming = 42,
+
+        Discussion = 2,
+
     }
 
-    public int ProblemId => _pid;
-    public string Title => _title;
-    public string Description => _description;
-    public string[] Concepts => _concepts;
-    public string[] Hints => _hints;
 
-}
-
-public enum LanguageType
-{
-    UNDEFINED = -1,
-    C = 1,
-    CSHARP = 2,
-    BASH = 3,
-    JAVA = 4,
-    PYTHON = 5,
-    GO = 6,
-
-
-
-}
-
-public enum ChallengeLevel
-{
-
-    BEG,
-    INT,
-    ADV,
-    MIX
-}
-
-public struct LangProbInfo
-{
-    public LangProbInfo(int pid, LanguageType lang)
+    public abstract class Problem : IProblem, IEquatable<Problem>
     {
-        ProblemId = pid;
-        Language = lang;
-    }
-    public readonly int ProblemId;
-    public readonly LanguageType Language;
-    public string? Title { get; set; }
-    public string? Description { get; set; }
-    public string[]? Concepts { get; set; }
-    public string[]? Hints { get; set; }
-    public ChallengeLevel? Level { get; set; }
+        private Int32 _problemID;
+        private string _problemName;
+        private ProblemType _problemType;
 
-    public string? ExpectedInput { get; set; }
 
-    public string? ExpectedOutput { get; set; }
-
-}
-
-public class ProgammingProblem : Problem
-{
-    private LangProbInfo _problemInfo;
-    public ProgammingProblem(LangProbInfo problem) : base(problem.ProblemId, problem.Title, problem.Description, problem.Concepts, problem.Hints)
-    {
-        _problemInfo = problem;
-        switch(problem)
+        protected Problem(string title, ProblemType ptype)
         {
-            case Title
-                _problemInfo.Title = "Awaiting Title";
-                break;
-            case Description == null:
-                _problemInfo.Description = "Missing";
-                break;
-            case Concepts == null:
-            case Hints == null:
-            default:
+            _problemID = DateTime.Now.GetHashCode();
+            _problemName = title;
+            _problemType = ptype;
+        }
+        public int ProblemID => _problemID;
+
+        public string ProblemName => _problemName;
+
+        public string ProblemType => _problemType.ToString();
+
+        public bool Equals(Problem? other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            {
+                if (other.ProblemID == _problemID)
+                {
+                    return true;
+                }
+                return false;
+            }
+
         }
     }
-}
+    public enum ProgrammingLanguages
+    {
+        None = 0,
+        CSharp = 1,
+    }
 
+    public class ProgrammingProblem : Problem
+    {
+        private const ProblemType _thisProblemType = Structures.ProblemType.Programming;
+        private readonly ProgrammingLanguages _language;
+
+        private string _expectedInput = string.Empty;
+        private string _expectedOutput = string.Empty;
+        private string[] _concepts;
+        private string[] _hints;
+
+        private string[] _requiredConcept;
+
+
+
+        public ProgrammingProblem(string name, ProgrammingLanguages lang) : base(name, _thisProblemType)
+        {
+            _language = lang;
+            _concepts = new string[5];
+            _hints = new string[5];
+            _requiredConcept = new string[5];
+
+
+        }
+        protected static ProgrammingProblem CSharpProblem(string title)
+        {
+            return new ProgrammingProblem(title, ProgrammingLanguages.CSharp);
+        }
+        public Tuple<int, string, string, string, string, string> ProblemInfo()
+        {
+            //ID, title, type, lang, input, output, concepts[], hints[], requirements[]
+            return Tuple.Create(ProblemID, ProblemName, ProblemType, _language.ToString(), _expectedInput, _expectedOutput);
+        }
+        public string[] GetConcepts(){
+            return _concepts;
+        }
+        public string[] GetHints(){
+            return _hints;
+        }
+
+    }
+
+
+}

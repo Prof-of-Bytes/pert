@@ -1,0 +1,12 @@
+j:\pert\PERTLib\bin\Debug\net9.0\PERTLib.deps.json
+j:\pert\PERTLib\bin\Debug\net9.0\PERTLib.dll
+j:\pert\PERTLib\bin\Debug\net9.0\PERTLib.pdb
+j:\pert\PERTLib\obj\Debug\net9.0\PERTLib.GeneratedMSBuildEditorConfig.editorconfig
+j:\pert\PERTLib\obj\Debug\net9.0\PERTLib.AssemblyInfoInputs.cache
+j:\pert\PERTLib\obj\Debug\net9.0\PERTLib.AssemblyInfo.cs
+j:\pert\PERTLib\obj\Debug\net9.0\PERTLib.csproj.CoreCompileInputs.cache
+j:\pert\PERTLib\obj\Debug\net9.0\PERTLib.sourcelink.json
+j:\pert\PERTLib\obj\Debug\net9.0\PERTLib.dll
+j:\pert\PERTLib\obj\Debug\net9.0\refint\PERTLib.dll
+j:\pert\PERTLib\obj\Debug\net9.0\PERTLib.pdb
+j:\pert\PERTLib\obj\Debug\net9.0\ref\PERTLib.dll
