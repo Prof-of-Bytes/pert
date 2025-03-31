@@ -1,5 +1,18 @@
-﻿using Microsoft.VisualBasic;
+﻿/**
+Name: James Vernon
+COP 2362
+Date: 31 Mar 2025
+Summary Statement:
 
+For COP 2362 ^ minimum statements
+
+<summary>
+    <para>
+        Namespace stuctres contais the Types to create a Programming Problem. Abstract Problem implements IProblem.
+        Programming Problem is conctre class of Problem 
+    </para>
+</summary>
+*/
 namespace PERTLib.Structures
 {
     public interface IProblem
@@ -17,9 +30,12 @@ namespace PERTLib.Structures
 
         Discussion = 2,
 
+        Quizes =3,
     }
 
-
+    /// <summary>
+    /// <param name="name">The name is the Problem Title</param>
+    /// </summary>
     public abstract class Problem : IProblem, IEquatable<Problem>
     {
         private Int32 _problemID;
@@ -27,10 +43,10 @@ namespace PERTLib.Structures
         private ProblemType _problemType;
 
 
-        protected Problem(string title, ProblemType ptype)
+        protected Problem(string name, ProblemType ptype)
         {
             _problemID = DateTime.Now.GetHashCode();
-            _problemName = title;
+            _problemName = name;
             _problemType = ptype;
         }
         public int ProblemID => _problemID;
@@ -38,7 +54,7 @@ namespace PERTLib.Structures
         public string ProblemName => _problemName;
 
         public string ProblemType => _problemType.ToString();
-
+        //Problems are only eqaul value wise if they have the same ProblemID
         public bool Equals(Problem? other)
         {
             if (other == null)
@@ -71,7 +87,7 @@ namespace PERTLib.Structures
         private string[] _concepts;
         private string[] _hints;
 
-        private string[] _requiredConcept;
+        private string[] _requiredConcepts;
 
 
 
@@ -80,7 +96,7 @@ namespace PERTLib.Structures
             _language = lang;
             _concepts = new string[5];
             _hints = new string[5];
-            _requiredConcept = new string[5];
+            _requiredConcepts = new string[5];
 
 
         }
