@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "J:\\pert\\PertTests\\PertTests.csproj": {}
+    "j:\\pert\\PertTests\\PertTests.csproj": {}
   },
   "projects": {
-    "J:\\pert\\PERTLib\\PERTLib.csproj": {
+    "j:\\pert\\PERTLib\\PERTLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "J:\\pert\\PERTLib\\PERTLib.csproj",
+        "projectUniqueName": "j:\\pert\\PERTLib\\PERTLib.csproj",
         "projectName": "PERTLib",
-        "projectPath": "J:\\pert\\PERTLib\\PERTLib.csproj",
+        "projectPath": "j:\\pert\\PERTLib\\PERTLib.csproj",
         "packagesPath": "J:\\NuGet",
-        "outputPath": "J:\\pert\\PERTLib\\obj\\",
+        "outputPath": "j:\\pert\\PERTLib\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vernon.james\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -65,14 +65,14 @@
         }
       }
     },
-    "J:\\pert\\PertTests\\PertTests.csproj": {
+    "j:\\pert\\PertTests\\PertTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "J:\\pert\\PertTests\\PertTests.csproj",
+        "projectUniqueName": "j:\\pert\\PertTests\\PertTests.csproj",
         "projectName": "PertTests",
-        "projectPath": "J:\\pert\\PertTests\\PertTests.csproj",
+        "projectPath": "j:\\pert\\PertTests\\PertTests.csproj",
         "packagesPath": "J:\\NuGet",
-        "outputPath": "J:\\pert\\PertTests\\obj\\",
+        "outputPath": "j:\\pert\\PertTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vernon.james\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,8 +89,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "J:\\pert\\PERTLib\\PERTLib.csproj": {
-                "projectPath": "J:\\pert\\PERTLib\\PERTLib.csproj"
+              "j:\\pert\\PERTLib\\PERTLib.csproj": {
+                "projectPath": "j:\\pert\\PERTLib\\PERTLib.csproj"
               }
             }
           }

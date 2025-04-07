@@ -1,5 +1,6 @@
 ﻿namespace PertTests;
 
+using MenuItem;
 using Microsoft.VisualBasic;
 using PERTLib.Structures;
 
@@ -32,5 +33,15 @@ public sealed class TestProgrammingProblem
         var info = _testProblem.ProblemInfo();
         Console.WriteLine(info);
     }
-       
+      
+
+}
+[TestClass]
+public sealed class TestingMenuItem
+{
+    private readonly ConsoleMenuItem menutest = new(System.Console.In, System.Console.Out, "menu test", false, null);
+    [TestMethod]
+    public void TestPrintTest(){
+      menutest.PrintName();
+    }
 }

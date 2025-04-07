@@ -1,3 +1,4 @@
 {
-    "dotnet.defaultSolution": "PERTLib.sln"
+    "dotnet.defaultSolution": "PERTLib.sln",
+    "editor.language.colorizedBracketPairs": []
 }
