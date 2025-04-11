@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D+G8lU6sH7Y=",
+  "dgSpecHash": "b8RGd5X2S4s=",
   "success": true,
-  "projectFilePath": "j:\\pert\\PertTests\\PertTests.csproj",
+  "projectFilePath": "J:\\pert\\PertTests\\PertTests.csproj",
   "expectedPackageFiles": [
     "J:\\NuGet\\microsoft.applicationinsights\\2.22.0\\microsoft.applicationinsights.2.22.0.nupkg.sha512",
     "J:\\NuGet\\microsoft.codecoverage\\17.12.0\\microsoft.codecoverage.17.12.0.nupkg.sha512",

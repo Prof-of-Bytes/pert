@@ -1,6 +1,6 @@
 ﻿namespace PertTests;
 
-using MenuItem;
+using PERTLib.MenuItem;
 using Microsoft.VisualBasic;
 using PERTLib.Structures;
 
@@ -39,9 +39,12 @@ public sealed class TestProgrammingProblem
 [TestClass]
 public sealed class TestingMenuItem
 {
-    private readonly ConsoleMenuItem menutest = new(System.Console.In, System.Console.Out, "menu test", false, null);
+    private readonly ConsoleMenuItem menutest = new(Console.In, Console.Out, "menu test", false, null);
     [TestMethod]
     public void TestPrintTest(){
+      var  programstate =  menutest.CurrentState;
+      Assert.AreEqual<PERTLib.MenuItem.PROGAM_STATE>(programstate, PERTLib.MenuItem.PROGAM_STATE.NOTHING);
       menutest.PrintName();
+    
     }
 }

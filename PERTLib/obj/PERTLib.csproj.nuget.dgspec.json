@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "j:\\pert\\PERTLib\\PERTLib.csproj": {}
+    "J:\\pert\\PERTLib\\PERTLib.csproj": {}
   },
   "projects": {
-    "j:\\pert\\PERTLib\\PERTLib.csproj": {
+    "J:\\pert\\PERTLib\\PERTLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "j:\\pert\\PERTLib\\PERTLib.csproj",
+        "projectUniqueName": "J:\\pert\\PERTLib\\PERTLib.csproj",
         "projectName": "PERTLib",
-        "projectPath": "j:\\pert\\PERTLib\\PERTLib.csproj",
+        "projectPath": "J:\\pert\\PERTLib\\PERTLib.csproj",
         "packagesPath": "J:\\NuGet",
-        "outputPath": "j:\\pert\\PERTLib\\obj\\",
+        "outputPath": "J:\\pert\\PERTLib\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vernon.james\\AppData\\Roaming\\NuGet\\NuGet.Config",

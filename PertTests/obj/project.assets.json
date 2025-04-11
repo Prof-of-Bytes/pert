@@ -1673,11 +1673,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "j:\\pert\\PertTests\\PertTests.csproj",
+      "projectUniqueName": "J:\\pert\\PertTests\\PertTests.csproj",
       "projectName": "PertTests",
-      "projectPath": "j:\\pert\\PertTests\\PertTests.csproj",
+      "projectPath": "J:\\pert\\PertTests\\PertTests.csproj",
       "packagesPath": "J:\\NuGet",
-      "outputPath": "j:\\pert\\PertTests\\obj\\",
+      "outputPath": "J:\\pert\\PertTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vernon.james\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1694,8 +1694,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "j:\\pert\\PERTLib\\PERTLib.csproj": {
-              "projectPath": "j:\\pert\\PERTLib\\PERTLib.csproj"
+            "J:\\pert\\PERTLib\\PERTLib.csproj": {
+              "projectPath": "J:\\pert\\PERTLib\\PERTLib.csproj"
             }
           }
         }

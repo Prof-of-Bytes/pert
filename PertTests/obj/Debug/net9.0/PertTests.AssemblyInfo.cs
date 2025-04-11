@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PertTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc40fe9a9594eaeea9481b8e4362b1ece592727d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+88a7ce9f14a90ffe925b84aca398106c8c3b33b7")]
 [assembly: System.Reflection.AssemblyProductAttribute("PertTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PertTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
