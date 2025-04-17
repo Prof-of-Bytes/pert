@@ -1,0 +1,104 @@
+﻿
+
+
+
+PROGRAMMING-EXERCISES-REPOSITORY-TOOL (pert)
+
+James Vernon
+Version 1.0.0
+Date Created: 26-Mar-25
+Last Edit: 26-Mar-25
+
+
+
+OVERVIEW
+
+Description:
+Programming Exercise Repository Tool (pert) is a tool designed to store information about programming assignments in a structured format that can be created, read, updated or deleted (CRUD functionality). 
+
+The structured data should be saved to disk and searched for easily. In addition, the data should be able to print to specified format as well as print for git hub markdown files. 
+pert minimum functions
+1. Version 1.0.0 (semantic versioning) 
+1.1. CLI menu – for CRUD
+1.2. Data Store 
+1.3. Print Formatted Text
+
+Environment and Language
+pert will be written in C# using the .NET framework and configured for the Windows environment. 
+
+
+
+
+
+
+ANALYSIS
+
+Problem Statement(s) As a person responsible for assigning programming problems, it would be useful to have a program that easily creates and reads programming problems. The information is text based and needs to be formatted in various ways to easily publish.Domain Analysis/User Scope• The domain in which this tool will be used is the author’s work machine. Design and creation should be considered for other environments. For now though the program will be configured for Windows => 10/11
+• The data store feature will need to be abstracted so that either the data can be saved to a flat file or RDBMS system.
+• Large amounts of text will be passing through the command line. Considerations should be made to print into a readable format
+• Each problem should consist of the following data properties
+• Common to all Problems:
+o  Id - must be unique
+o Title – Title
+o Type – {programming, hands on,etc,…}
+• Common To Programming Problems
+o Language
+o Expected Input – Input sources or types of data to be ingested
+o Expected Output – what the program should do
+o Hints – any types of related classes or paradigms
+o Concepts – a store of searchable terms related to programming
+o Requirements – any mandatory concepts required for assignment completion
+• Description data should be searchable
+• Concepts, Language, Level, Requirements, and Course should be fields that can be filtered onMust DoRead, Write, and Search structured data to and to and from a disk storeMust Not DoNo compliance or policy requirements as of Ver-1.0.0
+
+
+(WHITEBOARDING)DOCUMENTATION
+
+EntitiesInterfacesIProblem which is an interface for the abstraction of a problem. Or properties that are common to all problems
+-id 
+-Name 
+-Type
+Abstract ClassesProblem – abstract class that represents a Problem by implementing IProblem
+
+Concrete ClassesA ProgrammingProblem is a type of ProblemData StorageHost envExternal DependenciesnoneProgram State
+TestingPertTests
+
+
+
+DIAGRAMING
+
+
+
+A. Menus
+a. Main
+b. Should indicate if the data store is loaded
+c. Should only attempt to Load or Create Data Store at this point
+d. If Data Store is loaded 
+i. Display Programs by scrollable screen(R) 
+ii. Index by a number(A)
+1. Print(R) - formatted
+2. Edit
+a. Save(W)/Cancel
+3. Delete
+a. Confirm(W)/Cancel
+4. Format to File(R)
+5. Create New
+a. Save/Cancel
+6. Change Data Store – Create New
+7. Exit
+B. Program States
+a. DATA_STORE_KNOWN
+b. DATE_STORE_UNKOWN
+c. DATA_LOADED
+d. DATA_NOT_LOADED
+e. READY_TO_READ
+f. READY_TO_WRITE
+g. READING
+h. WRITING
+i. ERROR
+
+MENU
+
+
+
+

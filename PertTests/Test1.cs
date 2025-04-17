@@ -17,7 +17,8 @@ public sealed class TestProgrammingProblem
         Assert.IsInstanceOfType<string>(info.Item2);
     }
     [TestMethod]
-    public void TestMethods(){
+    public void TestMethods()
+    {
         var c = _testProblem.GetConcepts();
         var h = _testProblem.GetHints();
 
@@ -29,11 +30,12 @@ public sealed class TestProgrammingProblem
 
     }
     [TestMethod]
-    public void PrintInfo(){
+    public void PrintInfo()
+    {
         var info = _testProblem.ProblemInfo();
         Console.WriteLine(info);
     }
-      
+
 
 }
 [TestClass]
@@ -41,10 +43,16 @@ public sealed class TestingMenuItem
 {
     private readonly ConsoleMenuItem menutest = new(Console.In, Console.Out, "menu test", false, null);
     [TestMethod]
-    public void TestPrintTest(){
-      var  programstate =  menutest.CurrentState;
-      Assert.AreEqual<PERTLib.MenuItem.PROGAM_STATE>(programstate, PERTLib.MenuItem.PROGAM_STATE.NOTHING);
-      menutest.PrintName();
-    
+    public void TestPrintTest()
+    {
+
+        menutest.PrintName();
+
+    }
+    [TestMethod]
+    public void TestProgramState()
+    {
+        var programstate = menutest.CurrentState;
+        Assert.AreEqual<PERTLib.MenuItem.PROGAM_STATE>(programstate, PERTLib.MenuItem.PROGAM_STATE.NOTHING);
     }
 }

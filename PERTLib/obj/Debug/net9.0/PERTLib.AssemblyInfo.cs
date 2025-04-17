@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PERTLib")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+88a7ce9f14a90ffe925b84aca398106c8c3b33b7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4dccdf24d2f9f51c40a8a2df04f177ce1e4c018c")]
 [assembly: System.Reflection.AssemblyProductAttribute("PERTLib")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PERTLib")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
