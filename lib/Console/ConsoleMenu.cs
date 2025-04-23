@@ -98,7 +98,8 @@ namespace PERT.ConsoleMenu
         /// </summary>
         /// <param name="name">Screen menu item</param>
         /// <param name="parent">ref to parent</param>
-        public PertConsoleScreen(string name, ConsoleMenuItem? parent) : base(Console.In, Console.Out, Console.Error, name, parent)
+        /// <param name"base">Base object construcor uses Console.In|Out|Error</param>
+        public PertConsoleScreen(string name, ConsoleMenuItem? parent) : base(Console.In, Console.Out, Console.Error, name, parent)//Console passesd here
         {
 
         }
