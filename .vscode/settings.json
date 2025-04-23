@@ -1,4 +1,6 @@
 {
     "dotnet.defaultSolution": "PERTLib.sln",
-    "editor.language.colorizedBracketPairs": []
+    "editor.language.colorizedBracketPairs": [],
+    "powershell.codeFormatting.preset": "Stroustrup",
+    "xml.completion.autoCloseRemovesContent": true
 }
