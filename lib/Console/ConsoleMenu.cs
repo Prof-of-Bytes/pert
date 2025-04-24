@@ -3,9 +3,9 @@ PERT
 By James Vernon
 23-Apr-2025
 <summary>
-    PERT is the tool used to create and store programming problems. 
-    Namespace <c>PERT.Problems</c> contains the entites for creating
-    Problems abstract and Programming Problems as a type of Problem.
+PERT is the tool used to create and store programming problems. 
+Namespace <c>PERT.Problems</c> contains the entites for creating
+Problems abstract and Programming Problems as a type of Problem.
 </summary>
 */
 namespace PERT.ConsoleMenu
@@ -44,10 +44,7 @@ namespace PERT.ConsoleMenu
         /// </summary>
         public Stack<IMenuItem> SubScreens { get; }
         public IMenuItem? ParentItem { get; }
-
-
     }
-
     public abstract class ConsoleMenuItem : IMenuItem
     {
         private TextReader _in;
@@ -93,6 +90,7 @@ namespace PERT.ConsoleMenu
     /// </summary>
     public class PertConsoleScreen : ConsoleMenuItem
     {
+       
         /// <summary>
         /// 
         /// </summary>
@@ -101,7 +99,7 @@ namespace PERT.ConsoleMenu
         /// <param name"base">Base object construcor uses Console.In|Out|Error</param>
         public PertConsoleScreen(string name, ConsoleMenuItem? parent) : base(Console.In, Console.Out, Console.Error, name, parent)//Console passesd here
         {
-
+        
         }
         /// <summary>
         /// static method to create a main screen
