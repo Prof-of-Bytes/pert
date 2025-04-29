@@ -2,85 +2,70 @@
 /// PERT 
 /// By James Vernon
 /// 23-Apr-2025
+using System.Dynamic;
 using System.IO;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
-
+using PERT.PertFactory;
 
 namespace PERT.ReadWrite;
 
-public struct PERTInfo
-{
-    public int ProblemId { get; }
-    public string ProblemType { get; }
-    public ProgrammingProblem Problem { get; set; }
-}
-public interface IPERTReader
-{
 
+
+
+public interface IRead
+{
+    public StreamReader Reader { get; }
+    public string DataFilePath { get; set; }
+    public HashSet<ProgrammingProblem> WorkingSet { get; set; }
+
+}
+public abstract class PERTReader : IRead
+{
     public StreamReader Reader { get; set; }
-    public PERTInfo ReadProblem();
-    public List<PERTInfo> ReadAllProblems();
-}
-public interface IPERTWriter
-{
-    public StreamWriter Writer { get; set; }
-    public void WriteProblem(ProgrammingProblem problem);
-    public void WriteAllProblems(List<ProgrammingProblem> problemList)
-}
-
-public class PERTConsoleWriter : IPERTWriter
-{
-    public StreamWriter Writer { get; set; }
-    public PERTConsoleWriter()
+    public string DataFilePath { get; set; }
+    public HashSet<ProgrammingProblem> WorkingSet { get; set; }
+    public PERTReader(StreamReader reader, string filePath, HashSet<ProgrammingProblem> workingSet)
     {
-        Writer = System.Console.Out;
-    }
-
-    public void WriteProblem(ProgrammingProblem problem)
-    {
-        Writer.WriteLine(problem.ToString());
-    }
-    public void WriteAllProblems(List<ProgrammingProblem> problemList)
-    {
-        foreach (ProgrammingProblem problem in problemList)
+        if (reader == null)
         {
-            Writer.WriteLine(problem.ToString());
+            throw new NullReferenceException();
         }
+        else
+        {
+            Reader = reader;
+        }
+        DataFilePath = filePath ?? string.Empty;
+        WorkingSet = workingSet ?? [];
     }
-    static void WriteText(string text)
-    {
-        Writer.WriteLine(text);
-    }
+    public abstract string ReadLine();
+    public abstract string ReadAllLines();
 
 }
 
-public class PERTFileWriter : IPERTWriter
+public class PERTFileReader : PERTReader
 {
-    public static string WorkingDirectory => Directory.GetCurrentDirectory();
-    public StreamWriter Writer { get; init; }
-    public string FilePath { get; init; }
-    public FileStream FileStream { get; init; }
-    public PERTFileWriter(string fileName)
+    public PERTFileReader(StreamReader reader, string filePath, HashSet<ProgrammingProblem> workingSet) : base(reader, filePath, workingSet)
+    {
+
+    }
+    private StreamReader Open()
     {
         try
         {
-            FilePath = $"{WorkingDirectory}/{fileName}.txt";
-            FileStream = new FileStream(FilePath, new FiLeStreamOptions());
-            Writer = new StreamWriter(FileStream);
+            return Reader = new StreamReader(DataFilePath);
         }
-        catch (IOException e)
+        catch (FileNotFoundException)
         {
-
+            return Reader = new StreamReader("default_directory.txt");
         }
     }
-    public bool WriteProblem(ProgrammingProblem problem)
+    public override string ReadAllLines()
     {
-
+        throw new NotImplementedException();
     }
-
-    public bool WriteAllProblems(List<ProgrammingProblem> problems)
+    public override string ReadLine()
     {
-
+        throw new NotImplementedException();
     }
 }
-
